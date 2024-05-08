@@ -11,4 +11,5 @@ class Item(scrapy.Item):
     name = scrapy.Field()
     price= scrapy.Field()
     place = scrapy.Field()
+    date= scrapy.Field()
     pass
