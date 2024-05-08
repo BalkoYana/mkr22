@@ -30,7 +30,7 @@ class OlxSpider(scrapy.Spider):
         items = response.xpath("//div[contains(@class, 'css-1sw7q4x')]")
 
         for item in items:
-            name = item.css('::text').get().strip()
+            name = item.css('h6::text').get().strip()
             price = item.css('p::text').get().strip()
              date = item.css('p[data-testid="location-date"]::text')[2].get().strip()
             location_date=item.css('p[data-testid="location-date"]::text').get().strip()
