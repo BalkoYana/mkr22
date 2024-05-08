@@ -32,7 +32,8 @@ class OlxSpider(scrapy.Spider):
         for item in items:
             name = item.css('::text').get().strip()
             price = item.css('p::text').get().strip()
-            location_date = item.css('p[data-testid="location-date"]::text').get().strip()
+             date = item.css('p[data-testid="location-date"]::text')[2].get().strip()
+            location_date=item.css('p[data-testid="location-date"]::text').get().strip()
 
 
 
@@ -40,6 +41,7 @@ class OlxSpider(scrapy.Spider):
                 name=name,
                 price=price,
                 place=location_date,
+                date=date
             )
 
         pass
